@@ -1,7 +1,8 @@
 package gui;
 
 import javax.swing.*;
-import businessLogic.BLFacade;
+
+import business.logic.BLFacade;
 import domain.User;
 
 import java.awt.*;

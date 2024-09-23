@@ -1,5 +1,6 @@
 package dataAccess;
 
+import java.util.logging.Logger;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -30,8 +31,13 @@ public class DataAccess {
 	ConfigXML c = ConfigXML.getInstance();
 	
 	private String adminPass="admin";
+	
+	Logger logger = Logger.getLogger(getClass().getName());
+	
+	private final String MADRID = "Madrid";
 
 	public DataAccess() {
+		
 		if (c.isDatabaseInitialized()) {
 			String fileName = c.getDbFilename();
 
@@ -40,9 +46,9 @@ public class DataAccess {
 				File fileToDeleteTemp = new File(fileName + "$");
 				fileToDeleteTemp.delete();
 
-				System.out.println("File deleted");
+				logger.info("File deleted");
 			} else {
-				System.out.println("Operation failed");
+				logger.info("Operation failed");
 			}
 		}
 		open();
@@ -50,7 +56,7 @@ public class DataAccess {
 			initializeDB();
 		}
 
-		System.out.println("DataAccess created => isDatabaseLocal: " + c.isDatabaseLocal() + " isDatabaseInitialized: "
+		logger.info("DataAccess created => isDatabaseLocal: " + c.isDatabaseLocal() + " isDatabaseInitialized: "
 				+ c.isDatabaseInitialized());
 
 		close();
@@ -104,10 +110,10 @@ public class DataAccess {
 			cal.set(2024, Calendar.APRIL, 20);
 			Date date4 = UtilDate.trim(cal.getTime());
 
-			driver1.addRide("Donostia", "Madrid", date2, 5, 20); //ride1
+			driver1.addRide("Donostia", MADRID, date2, 5, 20); //ride1
 			driver1.addRide("Irun", "Donostia", date2, 5, 2); //ride2
-			driver1.addRide("Madrid", "Donostia", date3, 5, 5); //ride3
-			driver1.addRide("Barcelona", "Madrid", date4, 0, 10); //ride4
+			driver1.addRide(MADRID, "Donostia", date3, 5, 5); //ride3
+			driver1.addRide("Barcelona", MADRID, date4, 0, 10); //ride4
 			driver2.addRide("Donostia", "Hondarribi", date1, 5, 3); //ride5
 
 			Ride ride1 = driver1.getCreatedRides().get(0);
@@ -174,7 +180,7 @@ public class DataAccess {
 			db.persist(dis);
 
 			db.getTransaction().commit();
-			System.out.println("Db initialized");
+			logger.info("Db initialized");
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -226,12 +232,12 @@ public class DataAccess {
 	 */
 	public Ride createRide(String from, String to, Date date, int nPlaces, float price, String driverName)
 			throws RideAlreadyExistException, RideMustBeLaterThanTodayException {
-		System.out.println(
+		logger.info(
 				">> DataAccess: createRide=> from= " + from + " to= " + to + " driver=" + driverName + " date " + date);
 		if (driverName==null) return null;
 		try {
 			if (new Date().compareTo(date) > 0) {
-				System.out.println("ppppp");
+				logger.info("ppppp");
 				throw new RideMustBeLaterThanTodayException(
 						ResourceBundle.getBundle("Etiquetas").getString("CreateRideGUI.ErrorRideMustBeLaterThanToday"));
 			}
@@ -266,7 +272,7 @@ public class DataAccess {
 	 * @return collection of rides
 	 */
 	public List<Ride> getRides(String from, String to, Date date) {
-		System.out.println(">> DataAccess: getActiveRides=> from= " + from + " to= " + to + " date " + date);
+		logger.info(">> DataAccess: getActiveRides=> from= " + from + " to= " + to + " date " + date);
 
 		List<Ride> res = new ArrayList<>();
 		TypedQuery<Ride> query = db.createQuery(
@@ -291,7 +297,7 @@ public class DataAccess {
 	 * @return collection of rides
 	 */
 	public List<Date> getThisMonthDatesWithRides(String from, String to, Date date) {
-		System.out.println(">> DataAccess: getThisMonthActiveRideDates");
+		logger.info(">> DataAccess: getThisMonthActiveRideDates");
 
 		List<Date> res = new ArrayList<>();
 
@@ -327,13 +333,13 @@ public class DataAccess {
 					"objectdb://" + c.getDatabaseNode() + ":" + c.getDatabasePort() + "/" + fileName, properties);
 			db = emf.createEntityManager();
 		}
-		System.out.println("DataAccess opened => isDatabaseLocal: " + c.isDatabaseLocal());
+		logger.info("DataAccess opened => isDatabaseLocal: " + c.isDatabaseLocal());
 
 	}
 
 	public void close() {
 		db.close();
-		System.out.println("DataAcess closed");
+		logger.info("DataAcess closed");
 	}
 
 	public User getUser(String erab) {
