@@ -1,14 +1,12 @@
-package businessLogic;
+package business.logic;
 
 import java.util.Date;
 
 import java.util.List;
 
-//import domain.Booking;
 import domain.Ride;
 import domain.Traveler;
 import domain.User;
-//import domain.Admin;
 import domain.Alert;
 import domain.Booking;
 import domain.Car;

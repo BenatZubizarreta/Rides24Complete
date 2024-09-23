@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import businessLogic.BLFacade;
+import business.logic.BLFacade;
 import domain.Car;
 
 import javax.swing.JLabel;
@@ -52,7 +52,7 @@ public class KotxeaGehituGUI extends JFrame {
 		this.setTitle(ResourceBundle.getBundle("Etiquetas").getString("KotxeaGUI.KotxeaGehitu"));
 		this.setResizable(false);
 
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
