@@ -1,3 +1,4 @@
+package tests;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -11,7 +12,7 @@ import java.util.Date;
 
 import org.junit.Test;
 
-import dataAccess.DataAccess;
+import data.access.DataAccess;
 import domain.Ride;
 import exceptions.RideAlreadyExistException;
 import exceptions.RideMustBeLaterThanTodayException;

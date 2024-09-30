@@ -10,7 +10,7 @@ import javax.xml.ws.Service;
 import business.logic.BLFacade;
 import business.logic.BLFacadeImplementation;
 import configuration.ConfigXML;
-import dataAccess.DataAccess;
+import data.access.DataAccess;
 
 public class ApplicationLauncher {
 
