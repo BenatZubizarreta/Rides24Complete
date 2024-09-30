@@ -12,16 +12,16 @@ import java.util.ResourceBundle;
 public class LoginGUI extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
-	private final String ETIKETA="Etiquetas";
+	private final static String etiketa="Etiquetas";
 
 	private JTextField fieldLog = new JTextField();
 	private JPasswordField fieldPass = new JPasswordField();
 
-	private JLabel jLabelLog = new JLabel(ResourceBundle.getBundle(ETIKETA).getString("LoginGUI.Username"));
-	private JLabel jLabelPass = new JLabel(ResourceBundle.getBundle(ETIKETA).getString("LoginGUI.Pass"));
+	private JLabel jLabelLog = new JLabel(ResourceBundle.getBundle(etiketa).getString("LoginGUI.Username"));
+	private JLabel jLabelPass = new JLabel(ResourceBundle.getBundle(etiketa).getString("LoginGUI.Pass"));
 
-	private JButton jButtonClose = new JButton(ResourceBundle.getBundle(ETIKETA).getString("Close"));
-	private JButton jButtonLogIn = new JButton(ResourceBundle.getBundle(ETIKETA).getString("LoginGUI.Login"));
+	private JButton jButtonClose = new JButton(ResourceBundle.getBundle(etiketa).getString("Close"));
+	private JButton jButtonLogIn = new JButton(ResourceBundle.getBundle(etiketa).getString("LoginGUI.Login"));
 
 	private static BLFacade appFacadeInterface;
 
@@ -39,7 +39,7 @@ public class LoginGUI extends JFrame {
 
 		this.getContentPane().setLayout(null);
 		this.setSize(new Dimension(400, 250));
-		this.setTitle(ResourceBundle.getBundle(ETIKETA).getString("LoginGUI.Login"));
+		this.setTitle(ResourceBundle.getBundle(etiketa).getString("LoginGUI.Login"));
 		this.setResizable(false);
 
 		jLabelLog.setBounds(39, 35, 100, 20);
@@ -87,7 +87,7 @@ public class LoginGUI extends JFrame {
 					jButtonClose_actionPerformed(e);
 				} else {
 					lblErrorea.setForeground(Color.RED);
-					lblErrorea.setText(ResourceBundle.getBundle(ETIKETA).getString("LoginGUI.ErrorNotRegistered"));
+					lblErrorea.setText(ResourceBundle.getBundle(etiketa).getString("LoginGUI.ErrorNotRegistered"));
 				}
 			}
 		});
