@@ -1,4 +1,4 @@
-package dataAccess;
+package data.access;
 
 import java.util.logging.Logger;
 import java.io.File;

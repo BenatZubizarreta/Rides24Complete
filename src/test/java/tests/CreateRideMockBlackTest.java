@@ -1,3 +1,4 @@
+package tests;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
@@ -21,7 +22,7 @@ import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
-import dataAccess.DataAccess;
+import data.access.DataAccess;
 import domain.Driver;
 import domain.Ride;
 import exceptions.RideAlreadyExistException;
