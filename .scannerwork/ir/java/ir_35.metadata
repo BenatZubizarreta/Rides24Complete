@@ -1,0 +1,5 @@
+data.access.DataAccess#getDiscount(Ljava/lang/String;)Ldomain/Discount;
+c27f9706f9f3168422f81009b3f2329c
+==
+isEmpty java.util.List#isEmpty()Z
+get java.util.List#get(I)Ljava/lang/Object;

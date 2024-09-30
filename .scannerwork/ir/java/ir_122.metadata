@@ -1,0 +1,6 @@
+business.logic.BLFacadeImplementation#updateUser(Ldomain/User;)V
+d6e176fa1c7b7e6ab8d53ff78ccd8782
+==
+close data.access.DataAccess#close()V
+open data.access.DataAccess#open()V
+updateUser data.access.DataAccess#updateUser(Ldomain/User;)V

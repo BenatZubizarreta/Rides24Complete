@@ -1,0 +1,6 @@
+business.logic.BLFacadeImplementation#getDestinationCities(Ljava/lang/String;)Ljava/util/List;
+1615ebc803184bb35579f28e357f2181
+==
+close data.access.DataAccess#close()V
+open data.access.DataAccess#open()V
+getArrivalCities data.access.DataAccess#getArrivalCities(Ljava/lang/String;)Ljava/util/List;

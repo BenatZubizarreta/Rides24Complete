@@ -1,0 +1,5 @@
+data.access.DataAccess#instance-init#
+6632f16323168905229d5a3c636dc968
+java.lang.Object#getClass()Ljava/lang/Class;
+java.util.logging.Logger#getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
+java.lang.Class#getName()Ljava/lang/String;

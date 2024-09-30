@@ -1,0 +1,6 @@
+business.logic.BLFacadeImplementation#isRegistered(Ljava/lang/String;Ljava/lang/String;)Z
+91dee2b393653afa4a350aa57c0142de
+==
+close data.access.DataAccess#close()V
+open data.access.DataAccess#open()V
+isRegistered data.access.DataAccess#isRegistered(Ljava/lang/String;Ljava/lang/String;)Z

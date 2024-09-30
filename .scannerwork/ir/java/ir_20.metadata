@@ -1,0 +1,5 @@
+data.access.DataAccess#getRides(Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)Ljava/util/List;
+812d6d81793a20751528516d545a807b
+java.util.ArrayList#<init>()V
+==
+info java.util.logging.Logger#info(Ljava/lang/String;)V

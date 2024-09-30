@@ -1,0 +1,15 @@
+
+8gui.AdminGUI#getBusinessLogic()Lbusiness/logic/BLFacade;J
+@C:/Users/ehu/git/Rides24Complete/src/main/java/gui/AdminGUI.java (("1*³
+1	 (w
+u
+	 (
+%0business.logic.BLFacade"__id*D
+
+__unknown_file ((*&
+gui.AdminGUI"
+appFacadeInterface"+
+ (
+
+%0business.logic.BLFacadeB"
+gui.AdminGUIH

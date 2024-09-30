@@ -1,0 +1,6 @@
+business.logic.BLFacadeImplementation#getRides(Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)Ljava/util/List;
+0f19c958af31b01c5fb2b5ebf91e58c1
+==
+close data.access.DataAccess#close()V
+open data.access.DataAccess#open()V
+getRides data.access.DataAccess#getRides(Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)Ljava/util/List;

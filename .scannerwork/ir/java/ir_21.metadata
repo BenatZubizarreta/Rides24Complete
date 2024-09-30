@@ -1,0 +1,7 @@
+data.access.DataAccess#getThisMonthDatesWithRides(Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)Ljava/util/List;
+112204fcd3dff5bac639a90404ef7a46
+java.util.ArrayList#<init>()V
+java.util.ArrayList#instance-init#
+==
+info java.util.logging.Logger#info(Ljava/lang/String;)V
+addAll java.util.List#addAll(Ljava/util/Collection;)Z

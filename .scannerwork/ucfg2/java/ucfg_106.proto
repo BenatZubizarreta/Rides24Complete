@@ -1,16 +1,96 @@
 
-?configuration.ConfigXML#getDataBaseOpenMode()Ljava/lang/String;S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.java¢ ¢(""1*ı
-1S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.java£	 £(©
-¶
-S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.java£	 £(
-%0java.lang.String"__id*1*/
-configuration.ConfigXML"
-dataBaseOpenMode"o
-S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.java£ £(
+]business.logic.BLFacadeImplementation#getMotaByUsername(Ljava/lang/String;)Ljava/lang/String;e
+YC:/Users/ehu/git/Rides24Complete/src/main/java/business/logic/BLFacadeImplementation.java¥ ¥( "startingBlock*å
+startingBlock
+¥  ¥(-ç
+ä
+
+≥ ≥(
+
+%6"
+__annotate*2
+
+__unknown_file (
+java.lang.Override*6
+
+__unknown_file (
+
+erabjava.lang.StringZ
+X
+
+¥( ¥(,
+erabjava.lang.String"__annotation*"
+
+__unknown_file (
+
+%6*
+1*€
+1
+µ µ(â
+Ü
+
+µ µ(
+%0data.access.DataAccess"__id*T
+
+__unknown_file (8*6'
+%business.logic.BLFacadeImplementation"
+	dbManager~|
+
+µ µ(
+
+%1void"data.access.DataAccess#open()V*:
+
+__unknown_file (
+
+%0data.access.DataAccess2open()â
+Ü
+
+∂ ∂(
+%2data.access.DataAccess"__id*T
+
+__unknown_file (8*6'
+%business.logic.BLFacadeImplementation"
+	dbManageríè
+
+∂ ∂(1
+%3java.lang.String"Ndata.access.DataAccess#getMotabyUsername(Ljava/lang/String;)Ljava/lang/String;*:
+
+__unknown_file (
+
+%2data.access.DataAccess*6
+
+__unknown_file (
+
+erabjava.lang.String2%getMotabyUsername(Ljava/lang/String;)d
+b
+
+∂ ∂(2
+motajava.lang.String"__id*4
+
+__unknown_file (
 
-%0java.lang.StringB
-configuration.ConfigXML
+%3java.lang.Stringâ
+Ü
+
+∑ ∑(
+%4data.access.DataAccess"__id*T
+
+__unknown_file (8*6'
+%business.logic.BLFacadeImplementation"
+	dbManagerÄ~
+
+∑ ∑(
+
+%5void"data.access.DataAccess#close()V*:
+
+__unknown_file (
+
+%4data.access.DataAccess2close()"(
+
+∏ ∏(
+
+motajava.lang.String:&
+
+¥! ¥(,
+erabjava.lang.StringB)'
+%business.logic.BLFacadeImplementationH

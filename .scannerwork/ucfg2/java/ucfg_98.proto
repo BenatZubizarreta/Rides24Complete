@@ -1,9 +1,131 @@
 
-/configuration.ConfigXML#isBusinessLogicLocal()ZQ
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaE E($"1*≥
-1Q
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaF	 F("[
-Q
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaF F(
-""B
-configuration.ConfigXML
+Übusiness.logic.BLFacadeImplementation#getThisMonthDatesWithRides(Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)Ljava/util/List;c
+YC:/Users/ehu/git/Rides24Complete/src/main/java/business/logic/BLFacadeImplementation.javak k(-"startingBlock*Æ
+startingBlockk- k(PÅ
+
+j j(
+%6"
+__annotate*)
+
+__unknown_file (
+	WebMethod*6
+
+__unknown_file (
+
+fromjava.lang.StringX
+V
+k5 k(9
+fromjava.lang.String"__annotation*"
+
+__unknown_file (
+
+%6
+}
+j j(
+%7"
+__annotate*)
+
+__unknown_file (
+	WebMethod*4
+
+__unknown_file (
+
+tojava.lang.StringV
+T
+kB k(D
+tojava.lang.String"__annotation*"
+
+__unknown_file (
+
+%7
+}
+j j(
+%8"
+__annotate*)
+
+__unknown_file (
+	WebMethod*4
+
+__unknown_file (
+
+datejava.util.DateV
+T
+kK k(O
+datejava.util.Date"__annotation*"
+
+__unknown_file (
+
+%8*
+1*Ç
+
+1l l(á
+Ñ
+l l(
+%0data.access.DataAccess"__id*T
+
+__unknown_file (8*6'
+%business.logic.BLFacadeImplementation"
+	dbManager|z
+l l(
+
+%1void"data.access.DataAccess#open()V*:
+
+__unknown_file (
+
+%0data.access.DataAccess2open()á
+Ñ
+m m(
+%2data.access.DataAccess"__id*T
+
+__unknown_file (8*6'
+%business.logic.BLFacadeImplementation"
+	dbManagerŒÀ
+m m(I
+%3java.util.List"wdata.access.DataAccess#getThisMonthDatesWithRides(Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)Ljava/util/List;*:
+
+__unknown_file (
+
+%2data.access.DataAccess*6
+
+__unknown_file (
+
+fromjava.lang.String*4
+
+__unknown_file (
+
+tojava.lang.String*4
+
+__unknown_file (
+
+datejava.util.Date2PgetThisMonthDatesWithRides(Ljava/lang/String;Ljava/lang/String;Ljava/util/Date;)_
+]
+m m(J
+datesjava.util.List"__id*2
+
+__unknown_file (
+
+%3java.util.Listá
+Ñ
+n n(
+%4data.access.DataAccess"__id*T
+
+__unknown_file (8*6'
+%business.logic.BLFacadeImplementation"
+	dbManager~|
+n n(
+
+%5void"data.access.DataAccess#close()V*:
+
+__unknown_file (
+
+%4data.access.DataAccess2close()"%
+o o(
+
+datesjava.util.List:$
+k. k(:
+fromjava.lang.String:"
+k; k(E
+tojava.lang.String:"
+kF k(O
+datejava.util.DateB)'
+%business.logic.BLFacadeImplementationH

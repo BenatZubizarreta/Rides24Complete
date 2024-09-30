@@ -1,0 +1,7 @@
+data.access.DataAccess#open()V
+5888fdd95a4fa59b3a5f2236b16e8095
+java.util.HashMap#<init>()V
+java.util.HashMap#instance-init#
+==
+info java.util.logging.Logger#info(Ljava/lang/String;)V
+put java.util.Map#put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
