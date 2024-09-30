@@ -32,6 +32,6 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Build and analyze
         env:
-          GITHUB_TOKEN: ${{ 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 }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ 30fd07958a6b0852225a1d1e4554202ea5e211bb }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=benatzubizarreta_rides24complete
