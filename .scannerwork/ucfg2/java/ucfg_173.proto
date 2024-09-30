@@ -1,0 +1,15 @@
+
+;gui.RegisterGUI#getBusinessLogic()Lbusiness/logic/BLFacade;M
+CC:/Users/ehu/git/Rides24Complete/src/main/java/gui/RegisterGUI.java (("1*¶
+1	 (z
+x
+	 (
+%0business.logic.BLFacade"__id*G
+
+__unknown_file (+*)
+gui.RegisterGUI"
+appFacadeInterface"+
+ (
+
+%0business.logic.BLFacadeB"
+gui.RegisterGUIH

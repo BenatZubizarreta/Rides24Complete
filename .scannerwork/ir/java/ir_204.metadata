@@ -1,0 +1,4 @@
+tests.CreateRideMockBlackTest#init()V
+adfde7af4699635882ac123207d76735
+data.access.DataAccess#instance-init#
+data.access.DataAccess#<init>(LEntityManager;)V

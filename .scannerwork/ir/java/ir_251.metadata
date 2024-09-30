@@ -1,0 +1,10 @@
+gui.AlertakKudeatuGUI#refreshTable(Ljava/lang/String;)V
+7a4d74adb91f666d828b1e1294af2be4
+java.text.SimpleDateFormat#<init>(Ljava/lang/String;)V
+java.text.SimpleDateFormat#instance-init#
+java.text.DateFormat#format(Ljava/util/Date;)Ljava/lang/String;
+==
+addRow javax.swing.table.DefaultTableModel#addRow([Ljava/lang/Object;)V
+getModel javax.swing.JTable#getModel()Ljavax/swing/table/TableModel;
+setRowCount javax.swing.table.DefaultTableModel#setRowCount(I)V
+getAlertsByUsername business.logic.BLFacade#getAlertsByUsername(Ljava/lang/String;)Ljava/util/List;

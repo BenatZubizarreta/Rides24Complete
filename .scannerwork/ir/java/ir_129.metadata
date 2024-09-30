@@ -1,0 +1,6 @@
+business.logic.BLFacadeImplementation#getKotxeByMatrikula(Ljava/lang/String;)LCar;
+5ca4476538d4847018cdeb3b034e2b75
+==
+close data.access.DataAccess#close()V
+open data.access.DataAccess#open()V
+getKotxeByMatrikula data.access.DataAccess#getKotxeByMatrikula(Ljava/lang/String;)LCar;

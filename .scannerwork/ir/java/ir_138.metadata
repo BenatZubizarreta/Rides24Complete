@@ -1,0 +1,6 @@
+business.logic.BLFacadeImplementation#getUserList()Ljava/util/List;
+138b374e1a196d148b7d380c5bb94754
+==
+close data.access.DataAccess#close()V
+open data.access.DataAccess#open()V
+getUserList data.access.DataAccess#getUserList()Ljava/util/List;

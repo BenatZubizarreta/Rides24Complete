@@ -1,9 +1,82 @@
 
-*configuration.ConfigXML#isDatabaseLocal()ZQ
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaA A("1*³
-1Q
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaB	 B("[
-Q
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaB B(
-""B
-configuration.ConfigXML
+^business.logic.BLFacadeImplementation#getDestinationCities(Ljava/lang/String;)Ljava/util/List;c
+YC:/Users/ehu/git/Rides24Complete/src/main/java/business/logic/BLFacadeImplementation.javaE E()"startingBlock*ü
+startingBlockE) E(6
+
+D D(
+%6"
+__annotate*)
+
+__unknown_file (
+	WebMethod*6
+
+__unknown_file (
+
+fromjava.lang.StringX
+V
+E1 E(5
+fromjava.lang.String"__annotation*"
+
+__unknown_file (
+
+%6*
+1*Ì
+1F F(‡
+„
+F F(
+%0data.access.DataAccess"__id*T
+
+__unknown_file (8*6'
+%business.logic.BLFacadeImplementation"
+	dbManager|z
+F F(
+
+%1void"data.access.DataAccess#open()V*:
+
+__unknown_file (
+
+%0data.access.DataAccess2open()‡
+„
+H H('
+%2data.access.DataAccess"__id*T
+
+__unknown_file (8*6'
+%business.logic.BLFacadeImplementation"
+	dbManagerŠ‡
+H H(>
+%3java.util.List"Kdata.access.DataAccess#getArrivalCities(Ljava/lang/String;)Ljava/util/List;*:
+
+__unknown_file (
+
+%2data.access.DataAccess*6
+
+__unknown_file (
+
+fromjava.lang.String2$getArrivalCities(Ljava/lang/String;)f
+d
+H H(?
+targetCitiesjava.util.List"__id*2
+
+__unknown_file (
+
+%3java.util.List‡
+„
+J J(
+%4data.access.DataAccess"__id*T
+
+__unknown_file (8*6'
+%business.logic.BLFacadeImplementation"
+	dbManager~|
+J J(
+
+%5void"data.access.DataAccess#close()V*:
+
+__unknown_file (
+
+%4data.access.DataAccess2close()",
+L L( 
+
+targetCitiesjava.util.List:$
+E* E(5
+fromjava.lang.StringB)'
+%business.logic.BLFacadeImplementationH

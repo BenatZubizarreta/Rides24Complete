@@ -1,0 +1,115 @@
+
+Tbusiness.logic.BLFacadeImplementation#isAdded(Ljava/lang/String;Ljava/lang/String;)Ze
+YC:/Users/ehu/git/Rides24Complete/src/main/java/business/logic/BLFacadeImplementation.java∫ ∫("startingBlock*Ä
+startingBlock
+∫ ∫(5ë
+é
+
+π π(
+
+%6"
+__annotate*2
+
+__unknown_file (
+java.lang.Override*:
+
+__unknown_file (
+
+usernamejava.lang.String^
+\
+
+∫ ∫('
+usernamejava.lang.String"__annotation*"
+
+__unknown_file (
+
+%6ç
+ä
+
+π π(
+
+%7"
+__annotate*2
+
+__unknown_file (
+java.lang.Override*6
+
+__unknown_file (
+
+matrjava.lang.StringZ
+X
+
+∫0 ∫(4
+matrjava.lang.String"__annotation*"
+
+__unknown_file (
+
+%7*
+1*ì
+1
+ª ª(â
+Ü
+
+ª ª(
+%0data.access.DataAccess"__id*T
+
+__unknown_file (8*6'
+%business.logic.BLFacadeImplementation"
+	dbManager~|
+
+ª ª(
+
+%1void"data.access.DataAccess#open()V*:
+
+__unknown_file (
+
+%0data.access.DataAccess2open()â
+Ü
+
+º º( 
+%2data.access.DataAccess"__id*T
+
+__unknown_file (8*6'
+%business.logic.BLFacadeImplementation"
+	dbManagerƒ¡
+
+º º(8
+%3boolean"Edata.access.DataAccess#isAdded(Ljava/lang/String;Ljava/lang/String;)Z*:
+
+__unknown_file (
+
+%2data.access.DataAccess*:
+
+__unknown_file (
+
+usernamejava.lang.String*6
+
+__unknown_file (
+
+matrjava.lang.String2-isAdded(Ljava/lang/String;Ljava/lang/String;)â
+Ü
+
+Ω Ω(
+%4data.access.DataAccess"__id*T
+
+__unknown_file (8*6'
+%business.logic.BLFacadeImplementation"
+	dbManagerÄ~
+
+Ω Ω(
+
+%5void"data.access.DataAccess#close()V*:
+
+__unknown_file (
+
+%4data.access.DataAccess2close()"
+
+æ æ(
+"":*
+
+∫ ∫((
+usernamejava.lang.String:&
+
+∫) ∫(4
+matrjava.lang.StringB)'
+%business.logic.BLFacadeImplementationHX

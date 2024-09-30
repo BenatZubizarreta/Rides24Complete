@@ -1,16 +1,115 @@
 
-@configuration.ConfigXML#getBusinessLogicPort()Ljava/lang/String;S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javañ ñ(#"1*ˆ
-1S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaó	 ó(™
-ß
-S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaó	 ó(
-%0java.lang.String"__id*2*0
-configuration.ConfigXML"
-businessLogicPort"o
-S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaó ó(
-
-%0java.lang.StringB
-configuration.ConfigXML
+Ybusiness.logic.BLFacadeImplementation#isRegistered(Ljava/lang/String;Ljava/lang/String;)Ze
+YC:/Users/ehu/git/Rides24Complete/src/main/java/business/logic/BLFacadeImplementation.javaî î("startingBlock*¸
+startingBlock
+î î(8ç
+ä
+
+ì ì(
+
+%6"
+__annotate*2
+
+__unknown_file (
+java.lang.Override*6
+
+__unknown_file (
+
+erabjava.lang.StringZ
+X
+
+î$ î((
+erabjava.lang.String"__annotation*"
+
+__unknown_file (
+
+%6è
+å
+
+ì ì(
+
+%7"
+__annotate*2
+
+__unknown_file (
+java.lang.Override*8
+
+__unknown_file (
+
+passwdjava.lang.String\
+Z
+
+î1 î(7
+passwdjava.lang.String"__annotation*"
+
+__unknown_file (
+
+%7*
+1*õ
+1
+ï ï(â
+Ü
+
+ï ï(
+%0data.access.DataAccess"__id*T
+
+__unknown_file (8*6'
+%business.logic.BLFacadeImplementation"
+	dbManager~|
+
+ï ï(
+
+%1void"data.access.DataAccess#open()V*:
+
+__unknown_file (
+
+%0data.access.DataAccess2open()â
+Ü
+
+ñ ñ( 
+%2data.access.DataAccess"__id*T
+
+__unknown_file (8*6'
+%business.logic.BLFacadeImplementation"
+	dbManagerÃ…
+
+ñ ñ(;
+%3boolean"Jdata.access.DataAccess#isRegistered(Ljava/lang/String;Ljava/lang/String;)Z*:
+
+__unknown_file (
+
+%2data.access.DataAccess*6
+
+__unknown_file (
+
+erabjava.lang.String*8
+
+__unknown_file (
+
+passwdjava.lang.String22isRegistered(Ljava/lang/String;Ljava/lang/String;)â
+Ü
+
+ó ó(
+%4data.access.DataAccess"__id*T
+
+__unknown_file (8*6'
+%business.logic.BLFacadeImplementation"
+	dbManagerÄ~
+
+ó ó(
+
+%5void"data.access.DataAccess#close()V*:
+
+__unknown_file (
+
+%4data.access.DataAccess2close()"
+
+ò ò(
+"":&
+
+î î()
+erabjava.lang.String:(
+
+î* î(7
+passwdjava.lang.StringB)'
+%business.logic.BLFacadeImplementationHX

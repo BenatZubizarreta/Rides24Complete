@@ -1,0 +1,10 @@
+data.access.DataAccess#<init>()V
+6e8a4e45e5cf6ed7e7cfe1b5ffe4b424
+java.io.File#<init>(Ljava/lang/String;)V
+java.io.File#instance-init#
+==
+info java.util.logging.Logger#info(Ljava/lang/String;)V
+close data.access.DataAccess#close()V
+open data.access.DataAccess#open()V
+initializeDB data.access.DataAccess#initializeDB()V
+delete java.io.File#delete()Z

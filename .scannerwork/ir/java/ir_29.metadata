@@ -1,0 +1,5 @@
+data.access.DataAccess#getMotabyUsername(Ljava/lang/String;)Ljava/lang/String;
+c41bd9848e08e2da40ede00e2f27e2b7
+==
+isEmpty java.util.List#isEmpty()Z
+get java.util.List#get(I)Ljava/lang/Object;

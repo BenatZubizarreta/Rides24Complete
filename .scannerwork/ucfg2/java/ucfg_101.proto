@@ -1,16 +1,96 @@
 
->configuration.ConfigXML#getInstance()Lconfiguration/ConfigXML;S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaé é($"1*˛
-1S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaè	 è(´
-®
-S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaè	 è(
-%0configuration.ConfigXML"__id*,**
-configuration.ConfigXML"
-theInstance"v
-S
-G/Users/iturrioz/git/Bets2021/src/main/java/configuration/ConfigXML.javaè è(
-
-%0configuration.ConfigXMLB"
-configuration.ConfigXML
+Nbusiness.logic.BLFacadeImplementation#getUser(Ljava/lang/String;)Ldomain/User;e
+YC:/Users/ehu/git/Rides24Complete/src/main/java/business/logic/BLFacadeImplementation.javaÑ Ñ("startingBlock*å
+startingBlock
+Ñ Ñ(!ç
+ä
+
+É É(
+
+%6"
+__annotate*2
+
+__unknown_file (
+java.lang.Override*6
+
+__unknown_file (
+
+erabjava.lang.StringZ
+X
+
+Ñ Ñ( 
+erabjava.lang.String"__annotation*"
+
+__unknown_file (
+
+%6*
+1*®
+1
+Ö Ö(â
+Ü
+
+Ö Ö(
+%0data.access.DataAccess"__id*T
+
+__unknown_file (8*6'
+%business.logic.BLFacadeImplementation"
+	dbManager~|
+
+Ö Ö(
+
+%1void"data.access.DataAccess#open()V*:
+
+__unknown_file (
+
+%0data.access.DataAccess2open()â
+Ü
+
+Ü Ü(
+%2data.access.DataAccess"__id*T
+
+__unknown_file (8*6'
+%business.logic.BLFacadeImplementation"
+	dbManagerÙÒ
+
+Ü Ü("
+%3domain.User"?data.access.DataAccess#getUser(Ljava/lang/String;)Ldomain/User;*:
+
+__unknown_file (
+
+%2data.access.DataAccess*6
+
+__unknown_file (
+
+erabjava.lang.String2getUser(Ljava/lang/String;)W
+U
+
+Ü Ü(#
+udomain.User"__id*/
+
+__unknown_file (
+
+%3domain.Userâ
+Ü
+
+á á(
+%4data.access.DataAccess"__id*T
+
+__unknown_file (8*6'
+%business.logic.BLFacadeImplementation"
+	dbManagerÄ~
+
+á á(
+
+%5void"data.access.DataAccess#close()V*:
+
+__unknown_file (
+
+%4data.access.DataAccess2close()" 
+
+à à(
+
+udomain.User:&
+
+Ñ Ñ( 
+erabjava.lang.StringB)'
+%business.logic.BLFacadeImplementationH
