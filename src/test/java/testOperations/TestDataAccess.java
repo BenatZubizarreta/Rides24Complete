@@ -133,6 +133,17 @@ public class TestDataAccess {
 			return null;
 
 		}
+		
+		public Ride addRide(String name, String from, String to,  Date date, int nPlaces, float price) {
+			db.getTransaction().begin();
+			Driver d = db.find(Driver.class, name);
+			Ride ride= null;
+			if (d!=null) {
+				ride=d.addRide(from, to, date, nPlaces, price);
+				db.getTransaction().commit();
+			}
+			return ride;
+		}
 
 
 		
