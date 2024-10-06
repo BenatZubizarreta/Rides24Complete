@@ -59,8 +59,36 @@ public class BookRideMockBlackTest {
 	
 	Driver driver;
 	@Test
-	//Izena null da
+	//Ondo erreserbatzen da
 	public void test1() {
+		String rideFrom="Donostia";
+		String rideTo="Zarautz";
+		String izena="Andoni";
+		Date rideDate=null;
+	    Traveler traveler = new Traveler(izena, "pass");
+	    traveler.setMoney(100);
+	    driver=new Driver("a","a");
+	    List<Traveler> lista = new ArrayList<Traveler>();
+	    lista.add(traveler);
+	    
+	    TypedQuery<Traveler> query = mock(TypedQuery.class);
+
+	    when(db.createQuery("SELECT t FROM Traveler t WHERE t.username = :username", Traveler.class))
+        .thenReturn(query);
+	    when(query.setParameter("username", izena)).thenReturn(query);
+    	when(query.getResultList()).thenReturn(lista);
+
+		sut.open();
+		Ride r =driver.addRide(rideFrom, rideTo, rideDate, 5,(float) 2.0);
+		Boolean emaitza = sut.bookRide(izena, r, 2, 10);  
+
+		 sut.close();
+		 assertTrue(emaitza);
+		//verify the results
+	}
+	@Test
+	//Izena null da
+	public void test2() {
 		String rideFrom="Donostia";
 		String rideTo="Zarautz";
 		String izena=null;
@@ -87,7 +115,7 @@ public class BookRideMockBlackTest {
 		//verify the results
 	}
 	//Traveler ez dago DB-an
-		public void test2() {
+		public void test3() {
 			String rideFrom="Donostia";
 			String rideTo="Zarautz";
 			String izena=null;
@@ -115,7 +143,7 @@ public class BookRideMockBlackTest {
 		}
 	@Test
 	//Eserleku kopurua negatiboa da
-	public void test3() {
+	public void test4() {
 		String rideFrom="Donostia";
 		String rideTo="Zarautz";
 		String izena="Andoni";
@@ -143,7 +171,7 @@ public class BookRideMockBlackTest {
 	}
 	@Test
 	//Deskontua negatiboa da
-	public void test4() {
+	public void test5() {
 		String rideFrom="Donostia";
 		String rideTo="Zarautz";
 		String izena="Andoni";
@@ -171,7 +199,7 @@ public class BookRideMockBlackTest {
 	}
 	@Test
 	//Ride ez dago DB-an
-	public void test5() {
+	public void test6() {
 		String rideFrom="Donostia";
 		String rideTo="Zarautz";
 		String izena="Andoni";
@@ -199,7 +227,7 @@ public class BookRideMockBlackTest {
 	}
 	@Test
 	//Ride null da
-	public void test6() {
+	public void test7() {
 		String rideFrom="Donostia";
 		String rideTo="Zarautz";
 		String izena="Andoni";

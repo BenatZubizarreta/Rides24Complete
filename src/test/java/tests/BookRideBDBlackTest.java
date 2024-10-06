@@ -21,10 +21,35 @@ public class BookRideBDBlackTest {
 
 	@SuppressWarnings("unused")
 	private Driver driver; 
+	@Test
+	//Ondo doa
+	public void test1() {
+		String izena = "Andoni";
+		String izena2 = "a";
+		String pas="a";
+		String rideFrom="Donostia";
+		String rideTo="Zarautz";
+		Date rideDate=null;;
 
+		testDA.open();
+		testDA.createTraveler(izena, pas);
+
+		testDA.createDriver(izena2, pas);
+		Ride r =testDA.addRide(izena2, rideFrom,rideTo,  rideDate, 4, 0);
+		testDA.close();
+		 sut.open();
+		 boolean emaitza = sut.bookRide(izena, r, 2, 10.0);
+		 sut.close();
+		 assertTrue(emaitza);
+		 testDA.open();
+		 testDA.removeDriver(izena2);
+		 testDA.removeTraveler(izena);
+         testDA.close();
+
+	}
 	@Test
 	//izena null da
-	public void test1() {
+	public void test2() {
 		String izena = null;
 		String izena2="a";
 		String rideFrom="Donostia";
@@ -47,7 +72,7 @@ public class BookRideBDBlackTest {
 	}
 	@Test
 	//Treveler ez dago datu basean
-	public void test2() {
+	public void test3() {
 		
 		String izena = "Andoni";
 		String izena2="a";
@@ -71,7 +96,7 @@ public class BookRideBDBlackTest {
 	}
 	@Test
 	//Eserleku kopurua negatiboa da
-	public void test3() {
+	public void test4() {
 		String izena = "Andoni";
 		String izena2 = "a";
 		String pas="a";
@@ -97,7 +122,7 @@ public class BookRideBDBlackTest {
 	}
 	@Test
 	//Deskontua negatiboa da
-	public void test4() {
+	public void test5() {
 		String izena = "Andoni";
 		String izena2 = "a";
 		String pas="a";
@@ -125,7 +150,7 @@ public class BookRideBDBlackTest {
 	}
 	@Test
 	//Ride ez dago DB-an
-	public void test5() {
+	public void test6() {
 		String izena = "Andoni";
 		String izena2 = "a";
 		String pas="a";
@@ -156,7 +181,7 @@ try {
 
 	@Test
 	//Ride null da
-	public void test6() {
+	public void test7() {
 		String izena = "Andoni";
 		String pas="a";
 		String rideFrom="Donostia";
