@@ -27,7 +27,7 @@ import domain.Driver;
 import domain.Ride;
 import domain.Traveler;
 
-public class BookRideMockWhiteTest {
+public class BookRideMockBlackTest {
 	static DataAccess sut;
 	
 	protected MockedStatic<Persistence> persistenceMock;
@@ -59,39 +59,16 @@ public class BookRideMockWhiteTest {
 	
 	Driver driver;
 	@Test
-	//Erabiltzailea ez da existitzen
+	//Izena null da
 	public void test1() {
 		String rideFrom="Donostia";
 		String rideTo="Zarautz";
-		Ride r=null;
-		String izena="Andoni";
+		String izena=null;
 		Date rideDate=null;
-		Traveler t=new Traveler(izena,"1234");
-	    
-	    TypedQuery<Traveler> query = mock(TypedQuery.class);
-
-	    when(db.createQuery("SELECT t FROM Traveler t WHERE t.username = :username", Traveler.class))
-        .thenReturn(query);
-	    when(query.setParameter("username", izena)).thenReturn(query);
-        when(query.getSingleResult()).thenThrow(new javax.persistence.NoResultException());			
-        sut.open();
-		Boolean emaitza=sut.bookRide(izena,r,2,10);
-		sut.close();
-		//verify the results
-		assertFalse(emaitza);
-	}
-	
-	@Test
-	//Ez dago nahikoa eserleku
-	public void test2() {
-		String rideFrom="Donostia";
-		String rideTo="Zarautz";
-		String izena="Ez erregistratua";
-		Date rideDate=null;
-		Traveler traveler = new Traveler(izena, "1234");
-		traveler.setMoney(50.0); 
-		Ride r = new Ride(rideFrom, rideTo, rideDate, 1, 20.0, driver);
-		List<Traveler> lista = new ArrayList<Traveler>();
+	    Traveler traveler = new Traveler(izena, "pass");
+	    traveler.setMoney(100);
+	    driver=new Driver("a","a");
+	    List<Traveler> lista = new ArrayList<Traveler>();
 	    lista.add(traveler);
 	    
 	    TypedQuery<Traveler> query = mock(TypedQuery.class);
@@ -99,28 +76,54 @@ public class BookRideMockWhiteTest {
 	    when(db.createQuery("SELECT t FROM Traveler t WHERE t.username = :username", Traveler.class))
         .thenReturn(query);
 	    when(query.setParameter("username", izena)).thenReturn(query);
-    	when(query.getResultList()).thenReturn(lista);
-        sut.open();		
-        sut.open();
-        
-		Boolean emaitza=sut.bookRide(izena,r,2,10);
-		sut.close();
-		//verify the results
-		assertFalse(emaitza);
-	}
-	
+        when(query.getSingleResult()).thenThrow(new javax.persistence.NoResultException());	
 
+		sut.open();
+		Ride r =driver.addRide(rideFrom, rideTo, rideDate, 5,(float) 2.0);
+		Boolean emaitza = sut.bookRide(izena, r, 2, 10);  
+
+		 sut.close();
+		 assertFalse(emaitza);
+		//verify the results
+	}
+	//Traveler ez dago DB-an
+		public void test2() {
+			String rideFrom="Donostia";
+			String rideTo="Zarautz";
+			String izena=null;
+			Date rideDate=null;
+		    Traveler traveler = new Traveler(izena, "pass");
+		    traveler.setMoney(100);
+		    driver=new Driver("a","a");
+		    List<Traveler> lista = new ArrayList<Traveler>();
+		    lista.add(traveler);
+		    
+		    TypedQuery<Traveler> query = mock(TypedQuery.class);
+
+		    when(db.createQuery("SELECT t FROM Traveler t WHERE t.username = :username", Traveler.class))
+	        .thenReturn(query);
+		    when(query.setParameter("username", izena)).thenReturn(query);
+	        when(query.getSingleResult()).thenThrow(new javax.persistence.NoResultException());	
+
+			sut.open();
+			Ride r =driver.addRide(rideFrom, rideTo, rideDate, 5,(float) 2.0);
+			Boolean emaitza = sut.bookRide(izena, r, 2, 10);  
+
+			 sut.close();
+			 assertFalse(emaitza);
+			//verify the results
+		}
 	@Test
-	//Ez dago nahikoa diru
+	//Eserleku kopurua negatiboa da
 	public void test3() {
 		String rideFrom="Donostia";
 		String rideTo="Zarautz";
-		String izena="Ez erregistratua";
+		String izena="Andoni";
 		Date rideDate=null;
-		Traveler traveler = new Traveler(izena, "1234");
-		traveler.setMoney(0.0); 
-		Ride r = new Ride(rideFrom, rideTo, rideDate, 5, 100.0, driver);
-		List<Traveler> lista = new ArrayList<Traveler>();
+	    Traveler traveler = new Traveler(izena, "pass");
+	    traveler.setMoney(100);
+	    driver=new Driver("a","a");
+	    List<Traveler> lista = new ArrayList<Traveler>();
 	    lista.add(traveler);
 	    
 	    TypedQuery<Traveler> query = mock(TypedQuery.class);
@@ -129,16 +132,17 @@ public class BookRideMockWhiteTest {
         .thenReturn(query);
 	    when(query.setParameter("username", izena)).thenReturn(query);
     	when(query.getResultList()).thenReturn(lista);
-        sut.open();
-        
-		Boolean emaitza=sut.bookRide(izena,r,2,10);
-		sut.close();
+
+		sut.open();
+		Ride r =driver.addRide(rideFrom, rideTo, rideDate, 5,(float) 2.0);
+		Boolean emaitza = sut.bookRide(izena, r, -2, 10);  
+
+		 sut.close();
+		 assertFalse(emaitza);
 		//verify the results
-		assertFalse(emaitza);
 	}
-	
 	@Test
-	//Ondo erreserbatzen da
+	//Deskontua negatiboa da
 	public void test4() {
 		String rideFrom="Donostia";
 		String rideTo="Zarautz";
@@ -159,15 +163,14 @@ public class BookRideMockWhiteTest {
 
 		sut.open();
 		Ride r =driver.addRide(rideFrom, rideTo, rideDate, 5,(float) 2.0);
-		Boolean emaitza = sut.bookRide(izena, r, 2, 10);  
+		Boolean emaitza = sut.bookRide(izena, r, 2, -10);  
 
 		 sut.close();
-		 assertTrue(emaitza);
+		 assertFalse(emaitza);
 		//verify the results
 	}
-
 	@Test
-	//Datu basea itxita dago
+	//Ride ez dago DB-an
 	public void test5() {
 		String rideFrom="Donostia";
 		String rideTo="Zarautz";
@@ -181,15 +184,46 @@ public class BookRideMockWhiteTest {
 	    
 	    TypedQuery<Traveler> query = mock(TypedQuery.class);
 
-	    when(db.createQuery("SELECT t FROM Traveler t WHERE t.username = :username", Traveler.class)).thenThrow(RuntimeException.class);
-	  
+	    when(db.createQuery("SELECT t FROM Traveler t WHERE t.username = :username", Traveler.class))
+        .thenReturn(query);
+	    when(query.setParameter("username", izena)).thenReturn(query);
+    	when(query.getResultList()).thenReturn(lista);
 
 		sut.open();
-		Ride r =driver.addRide(rideFrom, rideTo, rideDate, 5,(float) 2.0);
+		Ride r =new Ride(rideFrom, rideTo, rideDate, 5,(float) 2.0,driver);
+		Boolean emaitza = sut.bookRide(izena, r, 2, -10);  
+
+		 sut.close();
+		 assertFalse(emaitza);
+		//verify the results
+	}
+	@Test
+	//Ride null da
+	public void test6() {
+		String rideFrom="Donostia";
+		String rideTo="Zarautz";
+		String izena="Andoni";
+		Date rideDate=null;
+	    Traveler traveler = new Traveler(izena, "pass");
+	    traveler.setMoney(100);
+	    driver=new Driver("a","a");
+	    List<Traveler> lista = new ArrayList<Traveler>();
+	    lista.add(traveler);
+	    
+	    TypedQuery<Traveler> query = mock(TypedQuery.class);
+
+	    when(db.createQuery("SELECT t FROM Traveler t WHERE t.username = :username", Traveler.class))
+        .thenReturn(query);
+	    when(query.setParameter("username", izena)).thenReturn(query);
+    	when(query.getResultList()).thenReturn(lista);
+
+		sut.open();
+		Ride r =null;
 		Boolean emaitza = sut.bookRide(izena, r, 2, 10);  
 
 		 sut.close();
 		 assertFalse(emaitza);
 		//verify the results
 	}
+
 }

@@ -39,39 +39,48 @@ public class BookRideBDWhiteTest {
 	//Treveler ez dago datu basean
 	public void test1() {
 		
-		String username = "Existitzen ez den izena";
-
+		String izena = "Andoni";
+		String izena2="a";
 		String rideFrom="Donostia";
 		String rideTo="Zarautz";
-		
+		String pas="a";
+
 		Date rideDate=null;;
 		testDA.open();
-		Ride ride = testDA.addRide( username,  rideFrom,  rideTo,   rideDate,2,10);
+		testDA.createDriver(izena2, pas);
+		Ride ride = testDA.addRide( izena2,  rideFrom,  rideTo,   rideDate,2,10);
 		testDA.close();
 	    sut.open();
-	    boolean emaitza = sut.bookRide(username, ride, 2, 10.0);
+	    boolean emaitza = sut.bookRide(izena, ride, 2, 10.0);
 	    sut.close();
+	    testDA.open();
+	  	testDA.removeDriver(izena2);
+	    testDA.close();
 	    assertFalse(emaitza);
+	  
 	}
 	@Test
 	//Ez dago nahikoa eserleku
 	public void test2() {
-		String izena = "Ander";
-		String pas="pas";
-		String rideFrom="Donostia";
+		String izena = "Andoni";
+		String izena2 = "a";
+		String pas="a";
+		String rideFrom="Donostia"; 
 		String rideTo="Zarautz";
-		Date rideDate=null;;
+		Date rideDate=null;; 
 
 		testDA.open();
-		testDA.createDriver(izena, pas);
-		Ride r =testDA.addRide(izena, rideFrom,rideTo,  rideDate, 1, 0);
+		testDA.createDriver(izena2, pas);
+		testDA.createTraveler(izena, pas);
+		Ride r =testDA.addRide(izena2, rideFrom,rideTo,  rideDate, 1, 0);
 		testDA.close();
 		 sut.open();
 		 boolean emaitza = sut.bookRide(izena, r, 2, 10.0);
 		 sut.close();
 		 assertFalse(emaitza);
 		 testDA.open();
-		 testDA.removeDriver(izena);
+		 testDA.removeDriver(izena2);
+		 testDA.removeTraveler(izena);
          testDA.close();
        
 
@@ -80,22 +89,25 @@ public class BookRideBDWhiteTest {
 	@Test
 	//Ez dago diru nahikoa
 	public void test3() {
-		String izena = "Ander";
-		String pas="pas";
+		String izena = "Andoni";
+		String pas="a";
+		String izena2 = "a";
 		String rideFrom="Donostia";
 		String rideTo="Zarautz";
 		Date rideDate=null;;
 
 		testDA.open();
-		testDA.createDriver(izena, pas);
-		Ride r =testDA.addRide(izena, rideFrom,rideTo,  rideDate, 4, 100);
+		testDA.createDriver(izena2, pas);
+		testDA.createTraveler(izena, pas);
+		Ride r =testDA.addRide(izena2, rideFrom,rideTo,  rideDate, 4, 100);
 		testDA.close();
 		 sut.open();
 		 boolean emaitza = sut.bookRide(izena, r, 2, 10.0);
 		 sut.close();
 		 assertFalse(emaitza);
 		 testDA.open();
-		 testDA.removeDriver(izena);
+		 testDA.removeDriver(izena2);
+		 testDA.removeTraveler(izena);
          testDA.close();
        
 
@@ -104,43 +116,55 @@ public class BookRideBDWhiteTest {
 	@Test
 	//Ondo doa
 	public void test4() {
-		String izena = "Ander";
-		String pas="pas";
+		String izena = "Andoni";
+		String izena2 = "a";
+		String pas="a";
 		String rideFrom="Donostia";
 		String rideTo="Zarautz";
 		Date rideDate=null;;
 
 		testDA.open();
-		testDA.createDriver(izena, pas);
-		Ride r =testDA.addRide(izena, rideFrom,rideTo,  rideDate, 4, 0);
+		testDA.createTraveler(izena, pas);
+
+		testDA.createDriver(izena2, pas);
+		Ride r =testDA.addRide(izena2, rideFrom,rideTo,  rideDate, 4, 0);
 		testDA.close();
 		 sut.open();
 		 boolean emaitza = sut.bookRide(izena, r, 2, 10.0);
 		 sut.close();
-		 assertFalse(emaitza);
+		 assertTrue(emaitza);
 		 testDA.open();
-		 testDA.removeDriver(izena);
+		 testDA.removeDriver(izena2);
+		 testDA.removeTraveler(izena);
          testDA.close();
 
 	}
 	@Test
 	//Catch-era joan
 	public void test5() {
+		String izena = "Andoni";
+		String izena2 = "a";
 		try {
-			String izena = "Ander";
-			String pas="pas";
+			
+			String pas="a";
 			String rideFrom="Donostia";
 			String rideTo="Zarautz";
 			Date rideDate=null;
 			testDA.open();
-			testDA.createDriver(izena, pas);
-			Ride r =testDA.addRide(izena, rideFrom,rideTo,  rideDate, 4, 0);
+			testDA.createTraveler(izena, pas);
+			testDA.createDriver(izena2, pas); 
+			Ride r =testDA.addRide(izena2, rideFrom,rideTo,  rideDate, 4, 0);
 			testDA.close();
 			sut.close();
 			sut.bookRide(izena, r, 2, 10.0);
 			fail();
 		}catch(Exception e){
 			assertTrue(true);
+		}finally{
+			 testDA.open();
+			 testDA.removeDriver(izena2);
+			 testDA.removeTraveler(izena);
+	         testDA.close();
 		}
 	}
 

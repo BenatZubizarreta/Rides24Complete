@@ -34,8 +34,8 @@ public class CreateRideBDBlackTest {
 	//sut.createRide:  The Driver("Driver Test") HAS  NOT one ride "from" "to" in that "date". 
 	// and the Ride must be created in DB
 	//The test supposes that the "Driver Test" does not exist in the DB
-
-	public void test1() {
+ 
+	public void test1() {  
 		String driverUsername="Driver Test";
 		String rideFrom="Donostia";
 		String rideTo="Zarautz";
