@@ -180,6 +180,23 @@ public class TestDataAccess {
 			return true;
 			}else return false;
 		}
+		public void addMoney(String user, double amount) {
+			System.out.println(">> TestDataAccess: addMoney");
+			Driver d = db.find(Driver.class, user);
+			if(d != null) {
+				db.getTransaction().begin();
+				d.setMoney(d.getMoney()+amount);
+				db.getTransaction().commit();
+				System.out.println("User: " + user + " added money: " + amount);
+			}
+		}
+		
+		public double getMoney(String user) {
+			System.out.println(">> TestDataAccess: getMoney");
+			Driver d = db.find(Driver.class, user);
+			return d.getMoney();
+		}
+
 
 
 		
