@@ -203,7 +203,7 @@ public class GauzatuEragiketaBDBlackTest {
 			boolean emaitza = sut.gauzatuEragiketa(username, -11.0, true);
 			sut.close();
 			testDA.open();
-			assertTrue(emaitza);
+			assertTrue(emaitza && testDA.getMoney(username) > 0);
 		} catch(Exception e) {
 			e.printStackTrace();
 			fail();
@@ -212,6 +212,7 @@ public class GauzatuEragiketaBDBlackTest {
 			testDA.close();	
 		}
 	}
+
 	
 	
 	

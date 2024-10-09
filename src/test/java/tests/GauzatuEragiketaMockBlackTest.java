@@ -49,105 +49,105 @@ public class GauzatuEragiketaMockBlackTest {
 	public void tearDown() {
 		persistenceMock.close();
 	}
-	
+
 	@Test
 	public void test1() {
-		
+
 		try {
 			String username = "TestUser";
-			
+
 			Driver d = new Driver(username, "1234");
 			d.setMoney(10.0);
-			
-            TypedQuery<User> query = mock(TypedQuery.class);
 
-            when(db.createQuery("SELECT u FROM User u WHERE u.username = :username", User.class))
-                .thenReturn(query);
+			TypedQuery<User> query = mock(TypedQuery.class);
 
-            when(query.setParameter("username", username)).thenReturn(query);
-            when(query.getSingleResult()).thenReturn(d);
-			
+			when(db.createQuery("SELECT u FROM User u WHERE u.username = :username", User.class))
+			.thenReturn(query);
+
+			when(query.setParameter("username", username)).thenReturn(query);
+			when(query.getSingleResult()).thenReturn(d);
+
 			sut.open();
 			boolean emaitza = sut.gauzatuEragiketa(username, 1.0, true);
 			sut.close();
-			
+
 			assertTrue(emaitza);
 		} catch(Exception e) {
 			e.printStackTrace();
 			fail();
 		}
 	}
-	
+
 	@Test
 	public void test2() {
-		
+
 		try {
 			String username = "TestUser";
-			
+
 			Driver d = new Driver(username, "1234");
 			d.setMoney(10.0);
-			
-            TypedQuery<User> query = mock(TypedQuery.class);
 
-            when(db.createQuery("SELECT u FROM User u WHERE u.username = :username", User.class))
-                .thenReturn(query);
+			TypedQuery<User> query = mock(TypedQuery.class);
 
-            when(query.setParameter("username", username)).thenReturn(query);
-            when(query.getSingleResult()).thenReturn(d);
-			
+			when(db.createQuery("SELECT u FROM User u WHERE u.username = :username", User.class))
+			.thenReturn(query);
+
+			when(query.setParameter("username", username)).thenReturn(query);
+			when(query.getSingleResult()).thenReturn(d);
+
 			sut.open();
 			boolean emaitza = sut.gauzatuEragiketa(username, 1.0, false);
 			sut.close();
-			
+
 			assertTrue(emaitza);
 		} catch(Exception e) {
 			e.printStackTrace();
 			fail();
 		}
 	}
-	
+
 	@Test
 	public void test3() {
-		
+
 		try {
 			String username = "TestUser";
-			
+
 			Driver d = new Driver(username, "1234");
 			d.setMoney(10.0);
-			
-            TypedQuery<User> query = mock(TypedQuery.class);
 
-            when(db.createQuery("SELECT u FROM User u WHERE u.username = :username", User.class))
-                .thenReturn(query);
+			TypedQuery<User> query = mock(TypedQuery.class);
 
-            when(query.setParameter("username", username)).thenReturn(query);
-            when(query.getSingleResult()).thenReturn(d);
-			
+			when(db.createQuery("SELECT u FROM User u WHERE u.username = :username", User.class))
+			.thenReturn(query);
+
+			when(query.setParameter("username", username)).thenReturn(query);
+			when(query.getSingleResult()).thenReturn(d);
+
 			sut.open();
 			boolean emaitza = sut.gauzatuEragiketa(username, 11.0, false);
 			sut.close();
-			
+
 			assertTrue(emaitza);
 		} catch(Exception e) {
 			e.printStackTrace();
 			fail();
 		}
 	}
-	
+
 	@Test
 	public void test4() {
-		
+
 		try {
 			String username = null;
-			
-            TypedQuery<User> query = mock(TypedQuery.class);
 
-            when(db.createQuery("SELECT u FROM User u WHERE u.username = :username", User.class))
-                .thenReturn(query);
+			TypedQuery<User> query = mock(TypedQuery.class);
 
-            when(query.setParameter("username", username)).thenReturn(query);
-            when(query.getSingleResult()).thenReturn(null);
-			
+			when(db.createQuery("SELECT u FROM User u WHERE u.username = :username", User.class))
+			.thenReturn(query);
+
+			when(query.setParameter("username", username)).thenReturn(query);
+			when(query.getSingleResult()).thenReturn(null);
+
 			sut.open();
 			boolean emaitza = sut.gauzatuEragiketa(username, 1.0, false);
 			sut.close();
@@ -158,20 +158,100 @@ public class GauzatuEragiketaMockBlackTest {
 			fail();
 		}
 	}
-	
+
 	@Test
 	public void test5() {
-		
+
 		try {
 			String username = "TestUser1";
-			
-            when(db.createQuery("SELECT u FROM User u WHERE u.username = :username", User.class)).thenReturn(null);
-			
+
+			when(db.createQuery("SELECT u FROM User u WHERE u.username = :username", User.class)).thenReturn(null);
+
 			sut.open();
 			boolean emaitza = sut.gauzatuEragiketa(username, 1.0, false);
 			sut.close();
 
 			assertTrue(!emaitza);
+		} catch(Exception e) {
+			e.printStackTrace();
+			fail();
+		}
+	}
+
+	@Test
+	public void test6() {
+
+		String username = "TestUser";
+
+		Driver d = new Driver(username, "1234");
+		d.setMoney(10.0);
+
+		TypedQuery<User> query = mock(TypedQuery.class);
+
+		when(db.createQuery("SELECT u FROM User u WHERE u.username = :username", User.class))
+		.thenReturn(query);
+
+		when(query.setParameter("username", username)).thenReturn(query);
+		when(query.getSingleResult()).thenReturn(d);
+		try {
+			sut.open();
+			boolean emaitza = sut.gauzatuEragiketa(username, 0.0, true);
+			sut.close();
+			assertTrue(emaitza);
+		} catch(Exception e) {
+			e.printStackTrace();
+			fail();
+		}
+	}
+
+	@Test
+	public void test7() {
+
+		String username = "TestUser";
+		Driver d = new Driver(username, "1234");
+		d.setMoney(10.0);
+
+		TypedQuery<User> query = mock(TypedQuery.class);
+
+		when(db.createQuery("SELECT u FROM User u WHERE u.username = :username", User.class))
+		.thenReturn(query);
+
+		when(query.setParameter("username", username)).thenReturn(query);
+		when(query.getSingleResult()).thenReturn(d);
+
+		try {
+
+			sut.open();
+			boolean emaitza = sut.gauzatuEragiketa(username, -1.0, true);
+			sut.close();
+			assertTrue(emaitza);
+		} catch(Exception e) {
+			e.printStackTrace();
+			fail();
+		}
+	}
+
+	@Test
+	public void test8() {
+
+		String username = "TestUser";
+
+		Driver d = new Driver(username, "1234");
+		d.setMoney(10.0);
+
+		TypedQuery<User> query = mock(TypedQuery.class);
+
+		when(db.createQuery("SELECT u FROM User u WHERE u.username = :username", User.class))
+		.thenReturn(query);
+
+		when(query.setParameter("username", username)).thenReturn(query);
+		when(query.getSingleResult()).thenReturn(d);
+
+		try {
+			sut.open();
+			boolean emaitza = sut.gauzatuEragiketa(username, -11.0, true);
+			sut.close();
+			assertTrue(emaitza);
 		} catch(Exception e) {
 			e.printStackTrace();
 			fail();
