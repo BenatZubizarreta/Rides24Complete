@@ -50,7 +50,7 @@
 		<sonar.organization>benatzubizarreta</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<sonar.projectKey>benatzubizarreta_rides24complete</sonar.projectKey>
-		<sonar.login>30fd07958a6b0852225a1d1e4554202ea5e211bb</sonar.login>
+		<sonar.token>30fd07958a6b0852225a1d1e4554202ea5e211bb</sonar.token>
 	</properties>
 
 	<!-- https://mvnrepository.com/artifact/junit/junit -->
