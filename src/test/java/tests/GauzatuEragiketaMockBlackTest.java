@@ -25,7 +25,7 @@ import data.access.DataAccess;
 import domain.*;
 
 public class GauzatuEragiketaMockBlackTest {
-/*
+
 	static DataAccess sut;
 	protected MockedStatic<Persistence> persistenceMock;
 	@Mock
@@ -257,5 +257,4 @@ public class GauzatuEragiketaMockBlackTest {
 			fail();
 		}
 	}
-	*/
 }

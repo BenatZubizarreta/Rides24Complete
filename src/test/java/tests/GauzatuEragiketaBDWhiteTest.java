@@ -12,7 +12,7 @@ import domain.*;
 
 public class GauzatuEragiketaBDWhiteTest {
 
-	/*
+
 	//sut:system under test
 	static DataAccess sut=new DataAccess();
 		 
@@ -120,5 +120,5 @@ public class GauzatuEragiketaBDWhiteTest {
 			assertTrue(true);
 		}
 	}
-	*/
+
 }
