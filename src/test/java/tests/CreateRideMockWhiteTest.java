@@ -22,6 +22,7 @@ import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
+import data.access.CreateRideParameter;
 import data.access.DataAccess;
 import domain.Driver;
 import domain.Ride;
@@ -88,7 +89,7 @@ public class CreateRideMockWhiteTest {
 				
 				//invoke System Under Test (sut)  
 				sut.open();
-				Ride ride=sut.createRide(rideFrom, rideTo, rideDate, 0, 0, driverUserName);
+				Ride ride=sut.createRide(new CreateRideParameter(rideFrom, rideTo, rideDate, 0, 0, driverUserName));
 
 				//verify the results
 				assertNull(ride);
@@ -142,7 +143,7 @@ public class CreateRideMockWhiteTest {
 			
 	      //invoke System Under Test (sut)  
 			sut.open();
-		    Ride r=sut.createRide(rideFrom, rideTo, rideDate, 0, 0, driverUsername);
+		    Ride r=sut.createRide(new CreateRideParameter(rideFrom, rideTo, rideDate, 0, 0, driverUsername));
 			sut.close();
 			
 			assertNull(r);
@@ -186,7 +187,7 @@ public class CreateRideMockWhiteTest {
 				
 				//invoke System Under Test (sut)  
 				sut.open();
-				Ride ride=sut.createRide(rideFrom, rideTo, rideDate, 0, 0, driverUserName);
+				Ride ride=sut.createRide(new CreateRideParameter(rideFrom, rideTo, rideDate, 0, 0, driverUserName));
 
 				//verify the results
 				assertNull(ride);
@@ -240,7 +241,7 @@ public class CreateRideMockWhiteTest {
 			
 			//invoke System Under Test (sut)  
 			sut.open();
-		    sut.createRide(rideFrom, rideTo, rideDate, 0, 0, driverUsername);
+		    sut.createRide(new CreateRideParameter(rideFrom, rideTo, rideDate, 0, 0, driverUsername));
 			sut.close();
 			
 			fail();
@@ -285,7 +286,7 @@ public class CreateRideMockWhiteTest {
 					
 			//invoke System Under Test (sut)  
 			sut.open();
-			Ride ride=sut.createRide(rideFrom, rideTo, rideDate, 0, 0, driverUsername);
+			Ride ride=sut.createRide(new CreateRideParameter(rideFrom, rideTo, rideDate, 0, 0, driverUsername));
 			sut.close();
 			//verify the results
 			assertNotNull(ride);

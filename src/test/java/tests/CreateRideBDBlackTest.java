@@ -12,6 +12,7 @@ import java.util.Date;
 
 import org.junit.Test;
 
+import data.access.CreateRideParameter;
 import data.access.DataAccess;
 import domain.Ride;
 import exceptions.RideAlreadyExistException;
@@ -58,7 +59,7 @@ public class CreateRideBDBlackTest {
 		try {
 			//invoke System Under Test (sut)  
 			sut.open();
-			 ride=sut.createRide(rideFrom, rideTo, rideDate, 2, 10, driverUsername);
+			 ride=sut.createRide(new CreateRideParameter(rideFrom, rideTo, rideDate, 2, 10, driverUsername));
 			sut.close();			
 			
 			//verify the results
@@ -122,7 +123,7 @@ public class CreateRideBDBlackTest {
 		try {
 			//invoke System Under Test (sut)  
 			sut.open();
-			 ride=sut.createRide(rideFrom, rideTo, rideDate, 2, 10, driverUsername);
+			 ride=sut.createRide(new CreateRideParameter(rideFrom, rideTo, rideDate, 2, 10, driverUsername));
 			sut.close();			
 			
 			//verify the results
@@ -183,7 +184,7 @@ public class CreateRideBDBlackTest {
 		try {
 			//invoke System Under Test (sut)  
 			sut.open();
-			 ride=sut.createRide(rideFrom, rideTo, rideDate, 2, 10, driverUsername);
+			 ride=sut.createRide(new CreateRideParameter(rideFrom, rideTo, rideDate, 2, 10, driverUsername));
 			sut.close();			
 			
 			//verify the results
@@ -236,7 +237,7 @@ public class CreateRideBDBlackTest {
 		try {
 			//invoke System Under Test (sut)  
 			sut.open();
-			 ride=sut.createRide(rideFrom, rideTo, rideDate, 2, 10, driverUsername);
+			 ride=sut.createRide(new CreateRideParameter(rideFrom, rideTo, rideDate, 2, 10, driverUsername));
 			sut.close();			
 			
 			//verify the results
@@ -296,7 +297,7 @@ public class CreateRideBDBlackTest {
 		try {
 			//invoke System Under Test (sut)  
 			sut.open();
-			 ride=sut.createRide(rideFrom, rideTo, rideDate, -2, 0, driverUsername);
+			 ride=sut.createRide(new CreateRideParameter(rideFrom, rideTo, rideDate, -2, 0, driverUsername));
 			sut.close();			
 			
 			//verify the results
@@ -358,7 +359,7 @@ public class CreateRideBDBlackTest {
 		try {
 			//invoke System Under Test (sut)  
 			sut.open();
-			 ride=sut.createRide(rideFrom, rideTo, rideDate, 2, -10, driverUsername);
+			 ride=sut.createRide(new CreateRideParameter(rideFrom, rideTo, rideDate, 2, -10, driverUsername));
 			sut.close();			
 			
 			//verify the results
@@ -422,7 +423,7 @@ public class CreateRideBDBlackTest {
 				
 				//invoke System Under Test (sut)  
 				sut.open();
-			    ride=sut.createRide(rideFrom, rideTo, rideDate, 2, 10, driverUsername);
+			    ride=sut.createRide(new CreateRideParameter(rideFrom, rideTo, rideDate, 2, 10, driverUsername));
 
 				//verify the results
 				assertNull(ride);
@@ -477,7 +478,7 @@ public class CreateRideBDBlackTest {
 			
 			//invoke System Under Test (sut)  
 			sut.open();
-		    sut.createRide(rideFrom, rideTo, rideDate, 2, 10, driverUsername);
+		    sut.createRide(new CreateRideParameter(rideFrom, rideTo, rideDate, 2, 10, driverUsername));
 			sut.close();
 			
 			fail();
@@ -524,7 +525,7 @@ public class CreateRideBDBlackTest {
 		try {
 			//invoke System Under Test (sut)  
 			sut.open();
-			 ride=sut.createRide(rideFrom, rideFrom, rideDate, 2, 10, driverUsername);
+			 ride=sut.createRide(new CreateRideParameter(rideFrom, rideFrom, rideDate, 2, 10, driverUsername));
 			sut.close();			
 			
 			//verify the results
@@ -591,7 +592,7 @@ public class CreateRideBDBlackTest {
 			
 			//invoke System Under Test (sut)  
 			sut.open();
-			Ride ride=sut.createRide(rideFrom, rideTo, rideDate, 2, 10, driverUsername);
+			Ride ride=sut.createRide(new CreateRideParameter(rideFrom, rideTo, rideDate, 2, 10, driverUsername));
 			
 
 			sut.close();

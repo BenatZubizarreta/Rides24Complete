@@ -7,8 +7,10 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 import configuration.ConfigXML;
+import data.access.CreateRideParameter;
 import data.access.DataAccess;
 import data.access.ErreklamazioaBidaliParameter;
+import data.access.HerriakEtaDataParameter;
 import domain.Ride;
 import domain.Traveler;
 import domain.User;
@@ -85,7 +87,7 @@ public class BLFacadeImplementation implements BLFacade {
 			throws RideMustBeLaterThanTodayException, RideAlreadyExistException {
 
 		dbManager.open();
-		Ride ride = dbManager.createRide(from, to, date, nPlaces, price, driverName);
+		Ride ride = dbManager.createRide(new CreateRideParameter(from, to, date, nPlaces, price, driverName));
 		dbManager.close();
 		return ride;
 	}
@@ -96,7 +98,7 @@ public class BLFacadeImplementation implements BLFacade {
 	@WebMethod
 	public List<Ride> getRides(String from, String to, Date date) {
 		dbManager.open();
-		List<Ride> rides = dbManager.getRides(from, to, date);
+		List<Ride> rides = dbManager.getRides(new HerriakEtaDataParameter(from, to, date));
 		dbManager.close();
 		return rides;
 	}
@@ -107,7 +109,7 @@ public class BLFacadeImplementation implements BLFacade {
 	@WebMethod
 	public List<Date> getThisMonthDatesWithRides(String from, String to, Date date) {
 		dbManager.open();
-		List<Date> dates = dbManager.getThisMonthDatesWithRides(from, to, date);
+		List<Date> dates = dbManager.getThisMonthDatesWithRides(new HerriakEtaDataParameter(from, to, date));
 		dbManager.close();
 		return dates;
 	}
