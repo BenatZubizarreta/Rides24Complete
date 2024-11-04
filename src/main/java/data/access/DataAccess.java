@@ -37,12 +37,11 @@ public class DataAccess {
 	
 	private final String MADRID = "Madrid";
 
-	public DataAccess() {
-		
+	public DataAccess() {	
 		if (c.isDatabaseInitialized()) {
 			String fileName = c.getDbFilename();
-
 			File fileToDelete = new File(fileName);
+			System.out.println("...");
 			if (fileToDelete.delete()) {
 				File fileToDeleteTemp = new File(fileName + "$");
 				fileToDeleteTemp.delete();
