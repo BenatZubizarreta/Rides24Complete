@@ -14,8 +14,9 @@ public class BLFacadeFactory {
 	}
 	
 	public BLFacade BLFacadeCreator(boolean isLocal) {
+		
+		ConfigXML c = ConfigXML.getInstance();
 		try {
-			ConfigXML c = ConfigXML.getInstance();
 			BLFacade appFacadeInterface;
 			if(isLocal) {
 				DataAccess da = new DataAccess();

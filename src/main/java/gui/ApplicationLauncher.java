@@ -28,7 +28,6 @@ public class ApplicationLauncher {
 		System.out.println("Locale: " + Locale.getDefault());
 
 		try {
-
 			BLFacade appFacadeInterface = blff.BLFacadeCreator(c.isBusinessLogicLocal());
 			
 			UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
@@ -36,7 +35,6 @@ public class ApplicationLauncher {
 			MainGUI.setBussinessLogic(appFacadeInterface);
 			MainGUI a = new MainGUI();
 			a.setVisible(true);
-
 		} catch (Exception e) {
 			System.out.println("Error in ApplicationLauncher: " + e.toString());
 		}

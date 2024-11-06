@@ -28,7 +28,7 @@ public class DataAccess {
 	private static final String DONOSTIA = "Donostia";
 	private EntityManager db;
 	private EntityManagerFactory emf;
-
+	
 	ConfigXML c = ConfigXML.getInstance();
 	
 	private String adminPass="admin";
@@ -37,15 +37,13 @@ public class DataAccess {
 	
 	private final String MADRID = "Madrid";
 
-	public DataAccess() {	
+	public DataAccess() {
 		if (c.isDatabaseInitialized()) {
-			String fileName = c.getDbFilename();
+			String fileName = "src/main/resources/rides.temp";
 			File fileToDelete = new File(fileName);
-			System.out.println("...");
 			if (fileToDelete.delete()) {
 				File fileToDeleteTemp = new File(fileName + "$");
 				fileToDeleteTemp.delete();
-
 				logger.info("File deleted");
 			} else {
 				logger.info("Operation failed");
@@ -55,12 +53,9 @@ public class DataAccess {
 		if (c.isDatabaseInitialized()) {
 			initializeDB();
 		}
-
 		logger.info("DataAccess created => isDatabaseLocal: " + c.isDatabaseLocal() + " isDatabaseInitialized: "
 				+ c.isDatabaseInitialized());
-
 		close();
-
 	}
 	//This constructor is used to mock the DB
 	public DataAccess(EntityManager db) {
